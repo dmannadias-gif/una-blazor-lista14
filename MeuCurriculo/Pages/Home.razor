@@ -1,0 +1,98 @@
+﻿@page "/"
+
+<PageTitle>Currículo | Dev .NET</PageTitle>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="text-center p-4 bg-light rounded-3 mb-4">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="rounded-circle mb-3"
+                     width="120" />
+                <h3>Anna Dias</h3>
+                <p class="text-muted">Analista e Desenvolvedora de Sistemas</p>
+                <p class="text-muted">Brasileira, 20 anos</p>
+                <p class="text-muted">Email: dmannadias@gmail.com</p>
+                <p class="text-muted">Linkedin:linkedin.com/in/anna-dias</p>
+                <p class="text-muted">Contato: (31) 995261604</p>
+                <p class="text-muted">Endereço: Sarzedo-MG</p>
+            </div>
+        </div>
+
+ <div class="col-lg-8">
+            <h2 class="mb-4">Formações</h2>
+            
+            @foreach (var exp in MinhasFormacoes)
+            {
+                <FormacaoCard Dados="exp" />
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Formacao> MinhasFormacoes = new()
+    {
+        new Formacao {
+            Instituicao = "Una Barreiro",
+            Curso = "Analise e Desenvolvimento de Sistemas",
+            Inicio = "2025",Fim = "Atual",
+        },
+        new Formacao {
+            Instituicao = "Escola Estadual Professor Ernesto C. Santiago",
+            Curso = "Ensino Médio",
+            Inicio = "2022",Fim = "2024",
+        }
+    };
+}
+
+ <div class="col-lg-8">
+            <h2 class="mb-4">Formações</h2>
+            
+            @foreach (var exp in MeusCursos)
+            {
+                <CursosComplementaresCard Dados="exp" />
+            }
+        </div>
+    
+@code {
+    private List<CursosComplementares> MeusCursos = new()
+    {
+        new CursosComplementares {
+            Instituicao = "English Is Cool",
+            Curso = "Inglês - B2",
+            Inicio = "2020",Fim = "2024",
+        },
+        new CursosComplementares {
+            Instituicao = "Yes Centro de Formação Profissional",
+            Curso = "Informática Profissional",
+            Inicio = "2022",Fim = "2023",
+        }
+    };
+}
+
+        <div class="col-lg-8">
+            <h2 class="mb-4">Experiência Profissional</h2>
+            
+            @foreach (var exp in MinhasExperiencias)
+            {
+                <ExperienciaCard Dados="exp" />
+            }
+        </div>
+
+@code {
+    private List<Experiencia> MinhasExperiencias = new()
+    {
+        new Experiencia {
+            Empresa = "Yes Centro de Formação Profissional",
+            Cargo = "Instrutora de Informática",
+            Inicio = "2023",Fim = "Atual",
+            Descricao = "Instrutora do Pacote Office"
+        },
+        new Experiencia {
+            Empresa = "Churros da Pri",
+            Cargo = "Freelancer",
+            Inicio = "2021", Fim = "2023",
+            Descricao = "Atendente e Caixa"
+        }
+    };
+}
