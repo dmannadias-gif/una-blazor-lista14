@@ -13,7 +13,7 @@ Curso: Análise e Desenvolvimento de Sistemas
 Para rodar o projeto, siga os passos:
 
 ```bash
-git clone https://github.com/seu-usuario/una-blazor-lista14.git
+git clone https://github.com/dmannadias-gif/una-blazor-lista14/tree/main
 cd una-blazor-lista14
 dotnet run
 ```
